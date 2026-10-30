@@ -1,7 +1,7 @@
 1 ICON "app.ico"
 1 VERSIONINFO
-FILEVERSION 0,4,0,0
-PRODUCTVERSION 0,4,0,0
+FILEVERSION 0,5,0,0
+PRODUCTVERSION 0,5,0,0
 BEGIN
   BLOCK "StringFileInfo"
   BEGIN
@@ -9,8 +9,8 @@ BEGIN
     BEGIN
       VALUE "FileDescription", "FFCC: My Life as a King (native port)"
       VALUE "ProductName", "My Life as a King native port"
-      VALUE "FileVersion", "0.4"
-      VALUE "ProductVersion", "0.4"
+      VALUE "FileVersion", "0.5"
+      VALUE "ProductVersion", "0.5"
       VALUE "OriginalFilename", "mylifeking.exe"
     END
   END

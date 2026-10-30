@@ -15,6 +15,7 @@ turns your WADs into a `game` folder and generates the C++ from the executable i
 - DLC: all 15 items of the add-on pack are installed as add-on content (`game/dlc`) and read by the game.
   "Purchase add-on content" needs the Wii Shop and does not work.
 - Audio: AX mixed frames are sent to the host in mixer order (no clicks); 60 ms jitter buffer.
+- First start builds the `game` folder (and `game/dlc`) from the WADs placed next to the exe - no Python needed.
 - GX runs on its own thread beside the game thread, like the Wii's GPU (set `GX_SYNC=1` to parse on the game thread).
 
 Shares its recompiler and runtime with [chocobo-dungeon-recomp](https://github.com/darkuni/chocobo-dungeon-recomp),
@@ -41,7 +42,7 @@ Hold Tab (or click the right stick) for fast-forward, F1 / Esc for settings, F11
 | `src/runtime/game.h` | Game-specific addresses the runtime needs |
 | `src/hle.txt` | Guest functions replaced by host code or stubbed |
 | `config/` | Symbols and decomp-toolkit (dtk) project files |
-| `dist/` | Batch files shipped with the Windows build (game folder setup, audio recording) |
+| `dist/` | Batch file shipped with the Windows build (audio recording) |
 
 ## Building
 
@@ -60,8 +61,8 @@ cmake -S . -B build -G Ninja -DCMAKE_CXX_COMPILER=clang++ && ninja -C build
 SHOT_EVERY=100 SHOT_DIR=shots TIMEOUT=120 ./build/mylifeking ../game
 ```
 
-Ship `mylifeking.exe` with `SDL2.dll`, `libwinpthread-1.dll`, `src/runtime/ipl-font-licenses.txt`, the files in
-`dist/` and `tools/prepare_wad.py` + `tools/lz11.py`.
+Ship `mylifeking.exe` with `SDL2.dll`, `libwinpthread-1.dll`, `src/runtime/ipl-font-licenses.txt` and `dist/record-audio.bat`.
+Players put their WAD(s) next to the exe; the first start makes the `game` folder.
 
 ## Disclaimer
 

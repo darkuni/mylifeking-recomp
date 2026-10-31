@@ -7,7 +7,13 @@ and its add-on content to native code. The game's PowerPC executable is translat
 **No game data is included.** You need your own copy of the game (and optionally the DLC) as WAD files. The build
 turns your WADs into a `game` folder and generates the C++ from the executable inside it.
 
-## Status (v0.4)
+## Download
+
+Releases: `MyLifeAsAKing-<version>-win64.zip` on the [Releases](https://github.com/darkuni/mylifeking-recomp/releases)
+page (GitHub Actions builds every push; publishing a release attaches the zip). Unzip it, put your WAD(s) in the same
+folder and run `mylifeking.exe`: the first start builds the `game` folder.
+
+## Status (v0.5)
 
 - Plays on Windows: tested through intro, kingdom building, cut scenes and menus; locked 30 fps on testers' PCs.
 - All three control styles work: Classic Controller (default, best on a PC gamepad), Wii Remote + Nunchuk, and
